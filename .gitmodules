@@ -1,0 +1,3 @@
+[submodule "level_zero"]
+	path = level_zero
+	url = https://github.com/oneapi-src/level-zero
