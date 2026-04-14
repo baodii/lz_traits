@@ -74,6 +74,13 @@ int main() {
                           << (double)m.totalSize / (1024.0 * 1024.0 * 1024.0)
                           << "\n";
             }
+
+            std::cout << "==============================\n";
+            ze_device_compute_properties_t compute{};
+            compute.stype = ZE_STRUCTURE_TYPE_DEVICE_COMPUTE_PROPERTIES;
+            zeDeviceGetComputeProperties(device, &compute);
+            std::cout << "Max shared local memory per workgroup (KB): "
+                      << compute.maxSharedLocalMemory / 1024 << "\n";
         }
     }
 
